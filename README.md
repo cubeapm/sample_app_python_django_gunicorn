@@ -21,7 +21,7 @@ docker compose up --build
 alembic upgrade head
 ```
 
-Flask app will now be available at `http://localhost:8000`.
+Django app will now be available at `http://localhost:8000`.
 
 ## Contributing
 
