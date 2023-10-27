@@ -88,8 +88,13 @@ WSGI_APPLICATION = 'sample_app.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'Cube_db',
+        'USER': 'root',
+        'PASSWORD': 'King@123',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+
     }
 }
 
@@ -134,3 +139,13 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+KAFKA_PRODUCER_SETTINGS = {
+    'bootstrap_servers': 'kafka:9092',
+}
+
+KAFKA_CONSUMER_SETTINGS = {
+    'bootstrap_servers': ['kafka:9092'],
+    'api_version': (0, 10),
+}
+

@@ -23,7 +23,7 @@ urlpatterns = [
     path("exception/", include("pages.urls")),
     path("redis/" , include("pages.urls")),
     path("api/" , include("pages.urls")),
-    # path("mysql/" , include ("pages.urls")),
-    # path("kafka/produce", include("pages.urls")),
-    # path("kafka/consume" , include("pages.urls")),
+    path("mysql/" , include ("pages.urls")),
+    path("kafka/produce", include("pages.urls")),
+    path("kafka/consume" , include("pages.urls")),
 ]
