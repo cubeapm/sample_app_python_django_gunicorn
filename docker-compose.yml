@@ -26,6 +26,7 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=test
+      - TZ=UTC
     volumes:
       - cube_python_django_gunicorn_mysql:/var/lib/mysql
     ports:
