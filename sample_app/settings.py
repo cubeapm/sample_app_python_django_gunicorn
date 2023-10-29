@@ -10,9 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import os
 from pathlib import Path
-
-
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,19 +26,19 @@ SECRET_KEY = 'django-insecure-*y0qc3(%03jl3kgw7(1gutl*hf7dlko#i)a&z_@6qk7v8dv)-m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    "apis.apps.ApisConfig",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "pages",
 ]
 
 MIDDLEWARE = [
@@ -51,16 +50,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
-CACHES = {
-    'default': {
-        'BACKEND': 'django_redis.cache.RedisCache',
-        'LOCATION': 'redis://redis:6379/1',  # Change this according to your Redis server's URL & port
-        'OPTIONS': {
-            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
-        }
-    }
-}
 
 ROOT_URLCONF = 'sample_app.urls'
 
@@ -89,12 +78,18 @@ WSGI_APPLICATION = 'sample_app.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Cube_db',
+        'NAME': 'test',
         'USER': 'root',
-        'PASSWORD': 'King@123',
-        'HOST': '127.0.0.1',
+        'PASSWORD': 'root',
+        'HOST': os.getenv('CUBE_SAMPLE_MYSQL_HOST', 'localhost'),
         'PORT': '3306',
+    }
+}
 
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.redis.RedisCache",
+        "LOCATION": "redis://redis:6379",
     }
 }
 
@@ -139,13 +134,3 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-KAFKA_PRODUCER_SETTINGS = {
-    'bootstrap_servers': 'kafka:9092',
-}
-
-KAFKA_CONSUMER_SETTINGS = {
-    'bootstrap_servers': ['kafka:9092'],
-    'api_version': (0, 10),
-}
-
