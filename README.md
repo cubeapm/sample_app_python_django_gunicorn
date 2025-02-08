@@ -3,6 +3,34 @@
 This branch contains code for New Relic instrumentation.
 
 Hitting an API endpoint will generate the corresponding traces. By default, New Relic agents send data to New Relic servers. However, if an environment variable `NEW_RELIC_HOST` is found, the agents send data to the domain mentioned in this environment variable's value instead of sending to New Relic servers. Thus, by adding the environment variable NEW_RELIC_HOST=<domain_of_cubeapm_server> in the [docker-compose.yml](docker-compose.yml). New Relic agent will send data to your CubeAPM servers instead of New Relic servers.
+However, there is one more thing that needs to be taken care of. New Relic agents send data using HTTPS on port 443. However, CubeAPM expects data on port 3130 over HTTP. So, a load balancer (or HTTP reverse proxy) is needed to accept data on HTTPS/443 and forward to CubeAPM on HTTP/3130.
+
+That's it! New Relic agents can now be used to send data to CubeAPM.
+
++------------------+      +------------------+      +------------------+
+|  Application    |       |  Load Balancer  |       |     CubeAPM     |
+| +------------+  |  -->  | +------------+  |  -->  | +------------+  |
+| |New Relic   |  | HTTPS | |            |  | HTTP  | |            |  |
+| |Agent       |  |  443  | |            |  | 3130  | |            |  |
+| +------------+  |       | +------------+  |       | +------------+  |
++------------------+      +------------------+      +------------------+
+
+
+Earlier, we were using a load balancer, but for localhost, we can use **ngrok**. Here are the steps to set it up:
+
+1. Ngrok should be installed – If ngrok is not installed, install it first.
+
+2. Run ngrok on HTTP port 3130 – Execute the following command in the terminal:
+
+    **ngrok http 3130**
+
+3. Copy the ngrok forwarding link – Once ngrok is running, it will provide a forwarding URL like this:
+
+    **Forwarding           https://1977-43-230-105-16.ngrok-free.app -> http://localhost:3130**
+
+Replace <domain_of_cubeapm_server> with this forwarding link (1977-43-230-105-16.ngrok-free.app) – Use this URL in place of <domain_of_cubeapm_server>.
+
+This will allow New Relic agents to connect to the CubeAPM server on localhost via HTTPS.
 
 Refer the project README below for more details.
 

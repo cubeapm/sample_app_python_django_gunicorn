@@ -6,7 +6,8 @@ services:
     container_name: cube_python_django_gunicorn_django
     environment:
       - CUBE_SAMPLE_MYSQL_HOST=mysql
-      - NEW_RELIC_HOST=<domain_of_cubeapm_server> 
+      - NEW_RELIC_HOST=<domain_of_cubeapm_server>
+      # New Relic agent will send data on https://<domain_of_cubeapm_server>:443
       # CubeAPM expects data on port 3130
     ports:
       - "8000:8000"
