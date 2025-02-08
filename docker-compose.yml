@@ -6,7 +6,7 @@ services:
     container_name: cube_python_django_gunicorn_django
     environment:
       - CUBE_SAMPLE_MYSQL_HOST=mysql
-      - OTEL_SERVICE_NAME=cube_sample_python_django_gunicorn
+      - OTEL_SERVICE_NAME=cube_sample_python_django_gunicorn_otel
       - OTEL_EXPORTER_OTLP_COMPRESSION=gzip
 
       # print traces on console
