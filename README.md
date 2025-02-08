@@ -1,3 +1,13 @@
+# New Relic Instrumentation
+
+This branch contains code for New Relic instrumentation.
+
+Hitting an API endpoint will generate the corresponding traces. By default, New Relic agents send data to New Relic servers. However, if an environment variable `NEW_RELIC_HOST` is found, the agents send data to the domain mentioned in this environment variable's value instead of sending to New Relic servers. Thus, by adding the environment variable NEW_RELIC_HOST=<domain_of_cubeapm_server> in the [docker-compose.yml](docker-compose.yml). New Relic agent will send data to your CubeAPM servers instead of New Relic servers.
+
+Refer the project README below for more details.
+
+---
+
 # Python Django Gunicorn Instrumentation
 
 This is a sample app to demonstrate how to instrument Python Django Gunicorn app with **New Relic** and **OpenTelemetry**. It contains source code for the Django app which interacts with various services like Redis, MySQL, etc. to demonstrate tracing for these services. This repository has a docker compose file to set up all these services conveniently.

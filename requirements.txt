@@ -6,6 +6,7 @@ cryptography==44.0.0
 Django==5.1.6
 gunicorn==23.0.0
 idna==3.10
+newrelic==10.6.0
 packaging==24.2
 pycparser==2.22
 PyMySQL==1.1.1
