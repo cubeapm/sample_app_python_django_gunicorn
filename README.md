@@ -6,7 +6,7 @@ The code is organized into multiple branches. The main branch has the Django app
 
 | Branch                                                                                         | Instrumentation | Code changes for instrumentation                                                                                |
 | ---------------------------------------------------------------------------------------------- | --------------- | --------------------------------------------------------------------------------------------------------------- |
-| [main](https://github.com/cubeapm/sample_app_python_django_gunicorn_testing/tree/main)         | None            | -                                                                                                               |
+| [main](https://github.com/cubeapm/sample_app_python_django_gunicorn/tree/main)         | None            | -                                                                                                               |
 | [newrelic](https://github.com/cubeapm/sample_app_python_django_gunicorn_testing/tree/newrelic) | New Relic       | [main...newrelic](https://github.com/cubeapm/sample_app_python_django_gunicorn_testing/compare/main...newrelic) |
 | [otel](https://github.com/cubeapm/sample_app_python_django_gunicorn_testing/tree/otel)         | OpenTelemetry   | [main...otel](https://github.com/cubeapm/sample_app_python_django_gunicorn_testing/compare/main...otel)         |
 
