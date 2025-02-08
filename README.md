@@ -7,14 +7,15 @@ However, there is one more thing that needs to be taken care of. New Relic agent
 
 That's it! New Relic agents can now be used to send data to CubeAPM.
 
-+------------------+      +------------------+      +------------------+
-|  Application    |       |  Load Balancer  |       |     CubeAPM     |
-| +------------+  |  -->  | +------------+  |  -->  | +------------+  |
-| |New Relic   |  | HTTPS | |            |  | HTTP  | |            |  |
-| |Agent       |  |  443  | |            |  | 3130  | |            |  |
-| +------------+  |       | +------------+  |       | +------------+  |
-+------------------+      +------------------+      +------------------+
-
+```
++------------------+       +------------------+       +------------------+
+|  Application     |       |  Load Balancer   |       |     CubeAPM      |
+| +------------+   |  -->  | +------------+   |  -->  | +------------+   |
+| |New Relic   |   | HTTPS | |            |   | HTTP  | |            |   |
+| |Agent       |   |  443  | |            |   | 3130  | |            |   |
+| +------------+   |       | +------------+   |       | +------------+   |
++------------------+       +------------------+       +------------------+
+```
 
 Earlier, we were using a load balancer, but for localhost, we can use **ngrok**. Here are the steps to set it up:
 
