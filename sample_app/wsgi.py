@@ -10,7 +10,19 @@ https://docs.djangoproject.com/en/4.2/howto/deployment/wsgi/
 import os
 
 from django.core.wsgi import get_wsgi_application
+from opentelemetry.instrumentation.django import DjangoInstrumentor
+from opentelemetry.instrumentation.pymysql import PyMySQLInstrumentor
+from opentelemetry.instrumentation.redis import RedisInstrumentor
+from opentelemetry.instrumentation.requests import RequestsInstrumentor
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'sample_app.settings')
+
+DjangoInstrumentor().instrument()
+PyMySQLInstrumentor().instrument()
+RedisInstrumentor().instrument()
+RequestsInstrumentor().instrument()
+# Additional instrumentation can be enabled by
+# following the docs for respective instrumentations at
+# https://github.com/open-telemetry/opentelemetry-python-contrib/tree/main/instrumentation
 
 application = get_wsgi_application()
