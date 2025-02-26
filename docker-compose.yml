@@ -6,6 +6,10 @@ services:
     container_name: cube_python_django_gunicorn_django
     environment:
       - CUBE_SAMPLE_MYSQL_HOST=mysql
+
+      - DD_SERVICE=cube_sample_python_flask_gunicorn_datadog
+      # send traces to CubeAPM
+      - DD_TRACE_AGENT_URL=http://host.docker.internal:3130
     ports:
       - "8000:8000"
     depends_on:
