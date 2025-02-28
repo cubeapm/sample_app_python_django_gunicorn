@@ -6,6 +6,17 @@ By default, hitting an API endpoint will generate a trace, which is sent to Cube
 
 Refer the project README below for more details.
 
+## Troubleshooting
+
+If the app does not show up in CubeAPM after integration is done, add the below environment variables to check Elastic agent logs.
+
+```shell
+# Print Elastic agent logs on screen (also see wsgi.py for additional requirements)
+ELASTIC_APM_LOG_FILE=stdout
+# Set Elastic agent log level to debug if needed to see detailed logs
+ELASTIC_APM_LOG_LEVEL=debug
+```
+
 ---
 
 # Python Django Gunicorn Instrumentation
