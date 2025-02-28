@@ -8,6 +8,19 @@ Refer the project README below for more details.
 
 ---
 
+# Troubleshooting
+
+If the app does not show up in CubeAPM after integration is done, add the below environment variables to check Datadog agent logs.
+
+```shell
+# Enables debug-level logging for detailed logs
+DD_TRACE_DEBUG=true
+# Enables startup diagnostic logging 
+DD_TRACE_STARTUP_LOGS=true
+```
+
+---
+
 # Python Django Gunicorn Instrumentation
 
 This is a sample app to demonstrate how to instrument Python Django Gunicorn app with **Datadog**, **Elastic**, **New Relic** and **OpenTelemetry**. It contains source code for the Django app which interacts with various services like Redis, MySQL, etc. to demonstrate tracing for these services. This repository has a docker compose file to set up all these services conveniently.

@@ -10,6 +10,12 @@ services:
       - DD_SERVICE=cube_sample_python_flask_gunicorn_datadog
       # send traces to CubeAPM
       - DD_TRACE_AGENT_URL=http://host.docker.internal:3130
+
+      # Not needed for production - https://ddtrace.readthedocs.io/en/stable/configuration.html#DD_TRACE_DEBUG
+      # Enables debug-level logging for detailed logs
+      # - DD_TRACE_DEBUG=true
+      # Enables startup diagnostic logging 
+      # - DD_TRACE_STARTUP_LOGS=true
     ports:
       - "8000:8000"
     depends_on:
