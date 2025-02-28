@@ -6,9 +6,7 @@ By default, hitting an API endpoint will generate a trace, which is sent to Cube
 
 Refer the project README below for more details.
 
----
-
-# Troubleshooting
+## Troubleshooting
 
 If the app does not show up in CubeAPM after integration is done, add the below environment variables to check Datadog agent logs.
 
