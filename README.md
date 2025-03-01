@@ -7,8 +7,8 @@ The code is organized into multiple branches. The main branch has the Django app
 | Branch                                                                                         | Instrumentation | Code changes for instrumentation                                                                                |
 | ---------------------------------------------------------------------------------------------- | --------------- | --------------------------------------------------------------------------------------------------------------- |
 | [main](https://github.com/cubeapm/sample_app_python_django_gunicorn/tree/main)         | None            | -                                                                                                               |
-| [datadog](https://github.com/cubeapm/sample_app_python_django_gunicorn/tree/datadog) | New Relic       | [main...datadog](https://github.com/cubeapm/sample_app_python_django_gunicorn/compare/main...datadog) |
-| [elastic](https://github.com/cubeapm/sample_app_python_django_gunicorn/tree/elastic) | New Relic       | [main...elastic](https://github.com/cubeapm/sample_app_python_django_gunicorn/compare/main...elastic) |
+| [datadog](https://github.com/cubeapm/sample_app_python_django_gunicorn/tree/datadog) | Datadog       | [main...datadog](https://github.com/cubeapm/sample_app_python_django_gunicorn/compare/main...datadog) |
+| [elastic](https://github.com/cubeapm/sample_app_python_django_gunicorn/tree/elastic) | Elastic       | [main...elastic](https://github.com/cubeapm/sample_app_python_django_gunicorn/compare/main...elastic) |
 | [newrelic](https://github.com/cubeapm/sample_app_python_django_gunicorn/tree/newrelic) | New Relic       | [main...newrelic](https://github.com/cubeapm/sample_app_python_django_gunicorn/compare/main...newrelic) |
 | [otel](https://github.com/cubeapm/sample_app_python_django_gunicorn/tree/otel)         | OpenTelemetry   | [main...otel](https://github.com/cubeapm/sample_app_python_django_gunicorn/compare/main...otel)         |
 
