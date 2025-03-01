@@ -8,13 +8,14 @@ Refer the project README below for more details.
 
 ## Troubleshooting
 
-If the app does not show up in CubeAPM after integration is done, add the below environment variables to check Datadog agent logs.
+If the app does not show up in CubeAPM after integration is done, add the below environment variables to check Datadog tracer logs.
 
 ```shell
-# Enables debug-level logging for detailed logs
-DD_TRACE_DEBUG=true
-# Enables startup diagnostic logging 
+# Print Datadog tracer startup logs on screen
 DD_TRACE_STARTUP_LOGS=true
+
+# Enable Datadog tracer debug logging if needed to see detailed logs
+#DD_TRACE_DEBUG=true
 ```
 
 ---

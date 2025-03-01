@@ -13,4 +13,4 @@ RUN pip install -r requirements.txt
 
 EXPOSE 8000
 
-CMD ["ddtrace-run","gunicorn", "sample_app.wsgi", "-c", "gunicorn.conf.py"]
+CMD ["ddtrace-run", "gunicorn", "sample_app.wsgi", "-c", "gunicorn.conf.py"]
