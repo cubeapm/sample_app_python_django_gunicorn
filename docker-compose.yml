@@ -18,6 +18,7 @@ services:
     depends_on:
       - mysql
       - redis
+      - mongo
     restart: always
 
   mysql:
@@ -30,6 +31,10 @@ services:
       - cube_python_django_gunicorn_mysql:/var/lib/mysql
     ports:
       - "3306:3306"
+
+  mongo:
+    image: mongo:7.0.12
+    container_name: cube_python_django_gunicorn_mongo
 
   redis:
     image: redis:alpine3.18
