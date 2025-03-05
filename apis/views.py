@@ -2,6 +2,9 @@ import requests
 from django.core.cache import cache
 from django.http import HttpResponse
 from apis.models import User
+from pymongo import MongoClient
+
+mongoClient = MongoClient("mongodb://mongo:27017/")
 
 
 def index(request):
@@ -28,3 +31,9 @@ def redis(request):
 
 def mysql(request):
     return HttpResponse(User.objects.all())
+
+
+def mongo(request):
+    post_id = mongoClient.test_database.test_collection.insert_one(
+        {'key1': 'value1'}).inserted_id
+    return HttpResponse(str(post_id))
