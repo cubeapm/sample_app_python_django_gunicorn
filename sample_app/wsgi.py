@@ -11,6 +11,7 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 from opentelemetry.instrumentation.django import DjangoInstrumentor
+from opentelemetry.instrumentation.pymongo import PymongoInstrumentor
 from opentelemetry.instrumentation.pymysql import PyMySQLInstrumentor
 from opentelemetry.instrumentation.redis import RedisInstrumentor
 from opentelemetry.instrumentation.requests import RequestsInstrumentor
@@ -18,6 +19,8 @@ from opentelemetry.instrumentation.requests import RequestsInstrumentor
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'sample_app.settings')
 
 DjangoInstrumentor().instrument()
+PymongoInstrumentor().instrument()
+# PymongoInstrumentor().instrument(capture_statement=True)
 PyMySQLInstrumentor().instrument()
 RedisInstrumentor().instrument()
 RequestsInstrumentor().instrument()
