@@ -1,6 +1,6 @@
 # Python Django Gunicorn Instrumentation
 
-This is a sample app to demonstrate how to instrument Python Django Gunicorn app with **Datadog**, **Elastic**, **New Relic** and **OpenTelemetry**. It contains source code for the Django app which interacts with various services like Redis, MySQL, etc. to demonstrate tracing for these services. This repository has a docker compose file to set up all these services conveniently.
+This is a sample app to demonstrate how to instrument Python Django Gunicorn app with **Datadog**, **Elastic**, **New Relic** and **OpenTelemetry**. It contains source code for the Django app which interacts with various services like Redis, MySQL, Mongo, etc. to demonstrate tracing for these services. This repository has a docker compose file to set up all these services conveniently.
 
 The code is organized into multiple branches. The main branch has the Django app without any instrumentation. Other branches then build upon the main branch to add specific instrumentations as below:
 
@@ -30,7 +30,7 @@ python manage.py migrate
 
 Django app will now be available at `http://localhost:8000/apis/`.
 
-The app has various API endpoints to demonstrate integrations with Redis, MySQL, etc. Check out [apis/views.py](apis/views.py) for the list of API endpoints.
+The app has various API endpoints to demonstrate integrations with Redis, MySQL, Mongo, etc. Check out [apis/views.py](apis/views.py) for the list of API endpoints.
 
 # Contributing
 

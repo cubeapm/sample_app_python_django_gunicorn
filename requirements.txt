@@ -4,10 +4,12 @@ cffi==1.17.1
 charset-normalizer==3.4.1
 cryptography==44.0.0
 Django==5.1.6
+dnspython==2.7.0
 gunicorn==23.0.0
 idna==3.10
 packaging==24.2
 pycparser==2.22
+pymongo==4.11.2
 PyMySQL==1.1.1
 redis==5.2.1
 requests==2.32.3

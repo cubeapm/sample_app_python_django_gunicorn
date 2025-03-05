@@ -9,4 +9,5 @@ urlpatterns = [
     path("api/", views.api, name="api"),
     path("redis/", views.redis, name="redis"),
     path("mysql/", views.mysql, name="mysql"),
+    path("mongo/", views.mongo, name="mongo"),
 ]
