@@ -1,13 +1,17 @@
+import logging
 import requests
 from django.core.cache import cache
 from django.http import HttpResponse
 from apis.models import User
 from pymongo import MongoClient
 
+logger = logging.getLogger(__name__)
+
 mongoClient = MongoClient("mongodb://mongo:27017/")
 
 
 def index(request):
+    logger.warning("home endpoint called")
     return HttpResponse("Hello")
 
 
@@ -16,6 +20,7 @@ def param(request, param):
 
 
 def exception(request):
+    logger.error("exception endpoint called")
     raise Exception("Sample exception")
 
 
